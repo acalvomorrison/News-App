@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireXmlToObjects (2.1.0):
+    - Alamofire
+    - EVReflection
+    - XMLDictionary
+  - EVReflection (5.1.5):
+    - EVReflection/Core (= 5.1.5)
+  - EVReflection/Core (5.1.5)
+  - SwiftyXMLParser (4.0.0)
+  - XMLDictionary (1.4.1)
+
+DEPENDENCIES:
+  - AlamofireXmlToObjects
+  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
+
+EXTERNAL SOURCES:
+  SwiftyXMLParser:
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+CHECKOUT OPTIONS:
+  SwiftyXMLParser:
+    :commit: bd62bc779bde32e752db4aa8ca0035c9390eb2b1
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireXmlToObjects: 3614c4945a5b154041ea9ade99644b5de66d5857
+  EVReflection: a80157a584cf0b977f5cada98988a3f4e828b863
+  SwiftyXMLParser: 42cf1c5de8bcdfa0218eb7f054b536635cb64b77
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+
+PODFILE CHECKSUM: 3d33613823c5b6ddb154e469e1307568eb1ad24b
+
+COCOAPODS: 1.3.1

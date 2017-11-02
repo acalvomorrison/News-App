@@ -1,0 +1,6 @@
+framework module Pods_News_Venezuela {
+  umbrella header "Pods-News Venezuela-umbrella.h"
+
+  export *
+  module * { export * }
+}
