@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyXMLParser
+//import SwiftyXMLParser
 
 //extension String {
 //    func toJSON() -> Any? {
@@ -16,9 +16,43 @@ import SwiftyXMLParser
 //    }
 //}
 
-class FirstViewController: UIViewController, NSURLConnectionDelegate {
+extension String {
+    func index(of string: String, options: CompareOptions = .literal) -> Index? {
+        return range(of: string, options: options)?.lowerBound
+    }
+    func endIndex(of string: String, options: CompareOptions = .literal) -> Index? {
+        return range(of: string, options: options)?.upperBound
+    }
+    func indexes(of string: String, options: CompareOptions = .literal) -> [Index] {
+        var result: [Index] = []
+        var start = startIndex
+        while let range = range(of: string, options: options, range: start..<endIndex) {
+            result.append(range.lowerBound)
+            start = range.upperBound
+        }
+        return result
+    }
+    func ranges(of string: String, options: CompareOptions = .literal) -> [Range<Index>] {
+        var result: [Range<Index>] = []
+        var start = startIndex
+        while let range = range(of: string, options: options, range: start..<endIndex) {
+            result.append(range)
+            start = range.upperBound
+        }
+        return result
+    }
+}
+
+class FirstViewController: UIViewController, NSURLConnectionDelegate, XMLParserDelegate {
     
     var data = NSMutableData()
+    var parser = XMLParser()
+    
+    var posts = NSMutableArray()
+    var elements = NSMutableDictionary()
+    var element = NSString()
+    var title1 = NSMutableString()
+    var date = NSMutableString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +61,7 @@ class FirstViewController: UIViewController, NSURLConnectionDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var request = URLRequest(url: URL(string: "http://eltiempo.com.ve/rss/global")!)
+        var request = URLRequest(url: URL(string: "http://eltiempo.com.ve/venezuela/feed/")!)
 
 
         request.httpMethod = "GET"
@@ -44,7 +78,22 @@ class FirstViewController: UIViewController, NSURLConnectionDelegate {
             }
 
             let responseString = String(data: data, encoding: .utf8)
-            print(responseString!)
+
+            if let index = responseString?.index(of: "<item>") {
+                let domains = responseString?.suffix(from: index)
+                let splitValues = domains?.components(separatedBy: "</item>")
+                var local = splitValues
+                local?.remove(at: (splitValues?.count)!-1)
+                
+                for string in local! {
+                    print(string + "\n</item>")
+                    print()
+                    print()
+                    print("--------------------------------------------------------------------------------------------------------------------------------------------------------")
+                }
+                //print(splitValues!)  // "ab\n"
+            }
+            //print(responseString!)
 
 //            let json: AnyObject? = responseString?.toJSON() as AnyObject
 //            print("Parsed JSON: \(json!)")
