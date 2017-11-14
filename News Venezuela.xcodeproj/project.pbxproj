@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		26745FA89130F29B034F896B /* Pods_News_Venezuela.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8818C0A0517E9B0205DCF9C0 /* Pods_News_Venezuela.framework */; };
 		36D975BE939DAA8635D39C8B /* Pods_News_VenezuelaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF802B3DDA3F7E25414F1453 /* Pods_News_VenezuelaUITests.framework */; };
+		500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */; };
+		500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */; };
 		5044D5CF1F8028C000BDAA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */; };
 		5044D5D11F8028C000BDAA03 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D01F8028C000BDAA03 /* FirstViewController.swift */; };
 		5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D21F8028C000BDAA03 /* SecondViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		042AF39E3E0F191120C21232 /* Pods-News VenezuelaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News VenezuelaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-News VenezuelaTests/Pods-News VenezuelaTests.release.xcconfig"; sourceTree = "<group>"; };
+		500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostsTableViewController.swift; sourceTree = "<group>"; };
+		500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		5044D5CB1F8028C000BDAA03 /* News Venezuela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News Venezuela.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5044D5D01F8028C000BDAA03 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				5044D5D01F8028C000BDAA03 /* FirstViewController.swift */,
 				5044D5D21F8028C000BDAA03 /* SecondViewController.swift */,
 				5044D5D41F8028C000BDAA03 /* Main.storyboard */,
+				500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */,
+				500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */,
 				5044D5D71F8028C000BDAA03 /* Assets.xcassets */,
 				5044D5D91F8028C000BDAA03 /* LaunchScreen.storyboard */,
 				5044D5DC1F8028C000BDAA03 /* Info.plist */,
@@ -471,6 +477,8 @@
 			files = (
 				5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */,
 				5044D5CF1F8028C000BDAA03 /* AppDelegate.swift in Sources */,
+				500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */,
+				500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */,
 				5044D5D11F8028C000BDAA03 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
