@@ -17,12 +17,22 @@ extension String {
 class NewsPostsTableViewController: UITableViewController {
     @IBOutlet var tableViewForNews: UITableView!
     
+    @IBOutlet weak var currentDate: UILabel!
     var posts = [String]()
     var responseString = ""
     let myGroup = DispatchGroup()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "MM-dd-yyyy"
+        self.currentDate.text = formatter.string(from: date)
+        //let calendar = Calendar.current
+        
+        
+        
         
         myGroup.enter()
         //// Do your task
@@ -72,21 +82,83 @@ class NewsPostsTableViewController: UITableViewController {
         return posts.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentNew = posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! PostsTableViewCell
         
-        cell.title.text = "Fuck this shit"
+        if let index = currentNew.index(of: "<title>") {
+            let domains = currentNew.suffix(from: index)
+            var splitValues = domains.components(separatedBy: "</title>")
+            var local = splitValues
+            local.remove(at: 1)
+            
+            for string in local {
+                splitValues = string.components(separatedBy: "<title>")
+                for title in splitValues {
+                    cell.title.text = title
+                }
+            }
+        }
         
-        let date = Date()
-        let calendar = Calendar.current
-        let minutes = calendar.component(.minute, from: date)
+        if let index2 = currentNew.index(of: "<pubDate>") {
+            let domains = currentNew.suffix(from: index2)
+            var splitValues = domains.components(separatedBy: "</pubDate>")
+            var local = splitValues
+            local.remove(at: 1)
+            
+            for string in local {
+                //print(string + "\n</item>")
+                //cell.title.text = string
+                
+                splitValues = string.components(separatedBy: "<pubDate>")
+                splitValues.remove(at: 0)
+                print(splitValues[0])
+                
+                var times = splitValues[0].components(separatedBy: " ")
+                var time = ""
+                for i in 0...3 {
+                    time.append(times[i] + " ")
+                }
+                
+                cell.time.text = time
+            }
+        }
         
-        cell.time.text = String(minutes)
+        if let index3 = currentNew.index(of: "<dc:creator>") {
+            let domains = currentNew.suffix(from: index3)
+            var splitValues = domains.components(separatedBy: "]]></dc:creator>")
+            var local = splitValues
+            local.remove(at: 1)
+            
+            for string in local {
+                splitValues = string.components(separatedBy: "<dc:creator><![CDATA[")
+                for authorName in splitValues {
+                    //print(authorName + " Look here here here here here here here here here here here here here here here")
+                    cell.author.text = authorName
+                }
+            }
+        }
         
-        cell.author.text = "Your daddy"
-        cell.descriptionForPost.text = currentNew
+        if let index4 = currentNew.index(of: "<content:encoded>") {
+            let domains = currentNew.suffix(from: index4)
+            var splitValues = domains.components(separatedBy: "<style>")
+            var local = splitValues
+            local.remove(at: 1)
+            
+            for string in local {
+                splitValues = string.components(separatedBy: "<content:encoded><![CDATA[")
+                for description in splitValues {
+                    var newString = description.replacingOccurrences(of: "<p>", with: "")
+                    newString = newString.replacingOccurrences(of: "</p>", with: "")
+                    newString = newString.replacingOccurrences(of: "<strong>", with: "")
+                    newString = newString.replacingOccurrences(of: "</strong>", with: "")
+                    newString = newString.replacingOccurrences(of: "&#8220;", with: "\"")
+                    newString = newString.replacingOccurrences(of: "&#8221;", with: "\"")
+                    
+                    cell.descriptionForPost.text = newString
+                }
+            }
+        }
         
 
         // Configure the cell...
@@ -138,6 +210,7 @@ class NewsPostsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     
     private func getNewPosts() {
         var request = URLRequest(url: URL(string: "http://eltiempo.com.ve/venezuela/feed/")!)

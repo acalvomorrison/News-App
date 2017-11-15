@@ -1,19 +1,15 @@
 //
-//  PostsTableViewCell.swift
+//  HeaderTableViewCell.swift
 //  News Venezuela
 //
-//  Created by Andres Calvo on 11/14/17.
+//  Created by Andres Calvo on 11/15/17.
 //  Copyright © 2017 Andres Calvo. All rights reserved.
 //
 
 import UIKit
 
-class PostsTableViewCell: UITableViewCell {
-    @IBOutlet weak var descriptionForPost: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var title: UILabel!
-
+class HeaderTableViewCell: UITableViewCell {
+    @IBOutlet weak var headerdate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
