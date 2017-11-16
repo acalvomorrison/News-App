@@ -13,13 +13,14 @@
 		5007D2191FBCC38800B4E796 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5007D2181FBCC38800B4E796 /* HeaderTableViewCell.swift */; };
 		500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */; };
 		500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */; };
-		5044D5CF1F8028C000BDAA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */; };
 		5044D5D11F8028C000BDAA03 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D01F8028C000BDAA03 /* FirstViewController.swift */; };
 		5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D21F8028C000BDAA03 /* SecondViewController.swift */; };
 		5044D5D81F8028C000BDAA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5044D5D71F8028C000BDAA03 /* Assets.xcassets */; };
 		5044D5DB1F8028C000BDAA03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5044D5D91F8028C000BDAA03 /* LaunchScreen.storyboard */; };
 		5044D5E61F8028C000BDAA03 /* News_VenezuelaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5E51F8028C000BDAA03 /* News_VenezuelaTests.swift */; };
 		5044D5F11F8028C000BDAA03 /* News_VenezuelaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5F01F8028C000BDAA03 /* News_VenezuelaUITests.swift */; };
+		504FE0401FBDFFBC009FE4FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504FE03F1FBDFFBC009FE4FE /* GoogleService-Info.plist */; };
+		50F9B5CB1FBD098D00B49880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */; };
 		A9327C28C40C9D2936F13C36 /* Pods_News_VenezuelaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE62001B351BBFDA54182C3D /* Pods_News_VenezuelaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		5044D5EC1F8028C000BDAA03 /* News VenezuelaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "News VenezuelaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5044D5F01F8028C000BDAA03 /* News_VenezuelaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_VenezuelaUITests.swift; sourceTree = "<group>"; };
 		5044D5F21F8028C000BDAA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504FE03F1FBDFFBC009FE4FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D5B418427E4D64C934E27E1 /* Pods-News VenezuelaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News VenezuelaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-News VenezuelaUITests/Pods-News VenezuelaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8818C0A0517E9B0205DCF9C0 /* Pods_News_Venezuela.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_Venezuela.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F5FA3FD01DE7F9506B1754 /* Pods-News Venezuela.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News Venezuela.debug.xcconfig"; path = "Pods/Target Support Files/Pods-News Venezuela/Pods-News Venezuela.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				5044D5D71F8028C000BDAA03 /* Assets.xcassets */,
 				5044D5D91F8028C000BDAA03 /* LaunchScreen.storyboard */,
 				5044D5DC1F8028C000BDAA03 /* Info.plist */,
+				504FE03F1FBDFFBC009FE4FE /* GoogleService-Info.plist */,
 			);
 			path = "News Venezuela";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5007D2171FBCC13700B4E796 /* Main.storyboard in Resources */,
+				504FE0401FBDFFBC009FE4FE /* GoogleService-Info.plist in Resources */,
 				5044D5DB1F8028C000BDAA03 /* LaunchScreen.storyboard in Resources */,
 				5044D5D81F8028C000BDAA03 /* Assets.xcassets in Resources */,
 			);
@@ -419,19 +423,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-News Venezuela/Pods-News Venezuela-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireXmlToObjects/AlamofireXmlToObjects.framework",
-				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireXmlToObjects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -478,8 +478,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F9B5CB1FBD098D00B49880 /* AppDelegate.swift in Sources */,
 				5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */,
-				5044D5CF1F8028C000BDAA03 /* AppDelegate.swift in Sources */,
 				500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */,
 				500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */,
 				5007D2191FBCC38800B4E796 /* HeaderTableViewCell.swift in Sources */,

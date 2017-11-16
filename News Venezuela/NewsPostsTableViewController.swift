@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 extension String {
     func index(of string: String, options: CompareOptions = .literal) -> Index? {
@@ -21,9 +22,34 @@ class NewsPostsTableViewController: UITableViewController {
     var posts = [String]()
     var responseString = ""
     let myGroup = DispatchGroup()
+    
+    let refresh = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewForNews.refreshControl = refresh
+        
+        refresh.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        loadData()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        // Fetch Weather Data
+        loadData()
+    }
+    
+    private func loadData() {
+        posts = [String]()
+        
+        self.refresh.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        self.refresh.attributedTitle = NSAttributedString(string: "Fetching News Data ...")
         let date = Date()
         let formatter = DateFormatter()
         
@@ -55,14 +81,9 @@ class NewsPostsTableViewController: UITableViewController {
             
             print(self.posts.count)
             self.tableViewForNews.reloadData()
+            self.refresh.endRefreshing()
             ////// do your remaining work
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +121,8 @@ class NewsPostsTableViewController: UITableViewController {
             }
         }
         
+        var realTime = ""
+        
         if let index2 = currentNew.index(of: "<pubDate>") {
             let domains = currentNew.suffix(from: index2)
             var splitValues = domains.components(separatedBy: "</pubDate>")
@@ -113,6 +136,8 @@ class NewsPostsTableViewController: UITableViewController {
                 splitValues = string.components(separatedBy: "<pubDate>")
                 splitValues.remove(at: 0)
                 print(splitValues[0])
+                
+                realTime = splitValues[0]
                 
                 var times = splitValues[0].components(separatedBy: " ")
                 var time = ""
@@ -148,8 +173,8 @@ class NewsPostsTableViewController: UITableViewController {
             for string in local {
                 splitValues = string.components(separatedBy: "<content:encoded><![CDATA[")
                 for description in splitValues {
-                    var newString = description.replacingOccurrences(of: "<p>", with: "")
-                    newString = newString.replacingOccurrences(of: "</p>", with: "")
+                    var newString = description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                    newString = newString.replacingOccurrences(of: "\n", with: "")
                     newString = newString.replacingOccurrences(of: "<strong>", with: "")
                     newString = newString.replacingOccurrences(of: "</strong>", with: "")
                     newString = newString.replacingOccurrences(of: "&#8220;", with: "\"")
@@ -160,6 +185,19 @@ class NewsPostsTableViewController: UITableViewController {
             }
         }
         
+        let ref = Database.database().reference().child(realTime)
+        
+        let refTitle = ref.child("Title")
+        refTitle.setValue(cell.title.text)
+        
+        let refDate = ref.child("Date")
+        refDate.setValue(cell.time.text)
+        
+        let refAuthor = ref.child("Author")
+        refAuthor.setValue(cell.author.text)
+        
+        let refDescription = ref.child("Description")
+        refDescription.setValue(cell.descriptionForPost.text)
 
         // Configure the cell...
 
