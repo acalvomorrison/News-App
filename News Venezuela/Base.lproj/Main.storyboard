@@ -46,49 +46,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="s4R-Be-hFU" customClass="HeaderTableViewCell" customModule="News_Venezuela" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9u-TE-JwP">
-                                    <rect key="frame" x="171.5" y="27" width="32.5" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D I A R I O   V E N E Z U E L A " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-HM-YMe">
+                                    <rect key="frame" x="46" y="2" width="283" height="26.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D I A R I O   V E N E Z U E L A " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-HM-YMe">
-                                    <rect key="frame" x="58" y="0.0" width="259" height="24"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9u-TE-JwP">
+                                    <rect key="frame" x="169.5" y="33.5" width="36" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="NVX-HM-YMe" firstAttribute="top" secondItem="s4R-Be-hFU" secondAttribute="top" id="3dq-Ej-3XO"/>
+                                <constraint firstItem="NVX-HM-YMe" firstAttribute="top" secondItem="s4R-Be-hFU" secondAttribute="top" constant="2" id="3dq-Ej-3XO"/>
                                 <constraint firstItem="NVX-HM-YMe" firstAttribute="centerX" secondItem="s4R-Be-hFU" secondAttribute="centerX" id="FHC-p9-iiG"/>
                                 <constraint firstItem="z9u-TE-JwP" firstAttribute="centerX" secondItem="s4R-Be-hFU" secondAttribute="centerX" id="o9L-5t-3hT"/>
-                                <constraint firstAttribute="bottom" secondItem="z9u-TE-JwP" secondAttribute="bottom" constant="10" id="yFf-XH-m7J"/>
+                                <constraint firstAttribute="bottom" secondItem="z9u-TE-JwP" secondAttribute="bottom" constant="11" id="yFf-XH-m7J"/>
                             </constraints>
                             <connections>
                                 <outlet property="headerdate" destination="z9u-TE-JwP" id="Qoa-hC-8ci"/>
                             </connections>
                         </view>
                         <prototypes>
-                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="254" id="HUW-bZ-UoB" customClass="PostsTableViewCell" customModule="News_Venezuela" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="83" width="375" height="254"/>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="293" id="HUW-bZ-UoB" customClass="PostsTableViewCell" customModule="News_Venezuela" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="93" width="375" height="293"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HUW-bZ-UoB" id="ks4-A0-EOD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="253.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="292.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-rH-GZN">
-                                            <rect key="frame" x="16" y="68" width="171" height="21"/>
+                                            <rect key="frame" x="16" y="68" width="171" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr6-L2-gYD">
-                                            <rect key="frame" x="195" y="68" width="164" height="21"/>
+                                            <rect key="frame" x="195" y="68" width="164" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="164" id="kxW-BF-ydh"/>
                                             </constraints>
@@ -107,7 +105,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtB-39-5fY">
-                                            <rect key="frame" x="16" y="97" width="343" height="146"/>
+                                            <rect key="frame" x="16" y="136" width="343" height="146"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="146" id="WFd-nc-Y2c"/>
                                             </constraints>
