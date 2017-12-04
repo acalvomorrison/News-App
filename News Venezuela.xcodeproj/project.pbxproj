@@ -13,6 +13,8 @@
 		5007D2191FBCC38800B4E796 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5007D2181FBCC38800B4E796 /* HeaderTableViewCell.swift */; };
 		500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */; };
 		500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */; };
+		502FCFB11FD5F12900580A06 /* ExpandPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502FCFB01FD5F12900580A06 /* ExpandPostViewController.swift */; };
+		502FCFB31FD5F97700580A06 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502FCFB21FD5F97700580A06 /* customButton.swift */; };
 		5044D5D11F8028C000BDAA03 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D01F8028C000BDAA03 /* FirstViewController.swift */; };
 		5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044D5D21F8028C000BDAA03 /* SecondViewController.swift */; };
 		5044D5D81F8028C000BDAA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5044D5D71F8028C000BDAA03 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		5007D2181FBCC38800B4E796 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostsTableViewController.swift; sourceTree = "<group>"; };
 		500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		502FCFB01FD5F12900580A06 /* ExpandPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandPostViewController.swift; sourceTree = "<group>"; };
+		502FCFB21FD5F97700580A06 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		5044D5CB1F8028C000BDAA03 /* News Venezuela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News Venezuela.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5044D5D01F8028C000BDAA03 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -126,10 +130,12 @@
 			children = (
 				5044D5CE1F8028C000BDAA03 /* AppDelegate.swift */,
 				5007D2151FBCC13700B4E796 /* Main.storyboard */,
+				502FCFB21FD5F97700580A06 /* customButton.swift */,
 				5044D5D01F8028C000BDAA03 /* FirstViewController.swift */,
 				5044D5D21F8028C000BDAA03 /* SecondViewController.swift */,
 				500D6DCE1FBB5F1700097CBD /* PostsTableViewCell.swift */,
 				500D6DCC1FBB5D7D00097CBD /* NewsPostsTableViewController.swift */,
+				502FCFB01FD5F12900580A06 /* ExpandPostViewController.swift */,
 				5007D2181FBCC38800B4E796 /* HeaderTableViewCell.swift */,
 				5044D5D71F8028C000BDAA03 /* Assets.xcassets */,
 				5044D5D91F8028C000BDAA03 /* LaunchScreen.storyboard */,
@@ -482,8 +488,10 @@
 				5044D5D31F8028C000BDAA03 /* SecondViewController.swift in Sources */,
 				500D6DCF1FBB5F1700097CBD /* PostsTableViewCell.swift in Sources */,
 				500D6DCD1FBB5D7D00097CBD /* NewsPostsTableViewController.swift in Sources */,
+				502FCFB31FD5F97700580A06 /* customButton.swift in Sources */,
 				5007D2191FBCC38800B4E796 /* HeaderTableViewCell.swift in Sources */,
 				5044D5D11F8028C000BDAA03 /* FirstViewController.swift in Sources */,
+				502FCFB11FD5F12900580A06 /* ExpandPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

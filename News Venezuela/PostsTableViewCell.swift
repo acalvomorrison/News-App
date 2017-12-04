@@ -13,7 +13,11 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var title: UILabel!
-
+    //@IBOutlet weak var expandNews: customButton!
+    @IBOutlet weak var twitterButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    var urlFacebok: String = ""
+    var urlTwitter: String = "https://twitter.com/share?status=eltiempo.com.ve/venezuela/feed/"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +29,11 @@ class PostsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func facebookButtonClicked(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string: urlFacebok)! as URL)
+    }
+    @IBAction func twitterButtonClicked(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string: urlTwitter)! as URL)
+    }
 }
